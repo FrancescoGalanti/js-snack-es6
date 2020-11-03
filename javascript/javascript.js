@@ -8,117 +8,29 @@
  // Jquerys //
 
  $(document).ready(function(){
- //
- //
- //  var biciclette = [
- //      {
- //        nome: "gianni",
- //        peso:  10
- //
- //      },
- //
- //      {
- //        nome: "Franca",
- //        peso: 8
- //      },
- //      {
- //        nome: "Scott",
- //        peso: 11
- //      }
- //
- //  ];
- //
- //
- //  // handlebars
- //
- //  var source = $("#bike-template").html();
- //  var template = Handlebars.compile(source);
- //
- //
- //  // default
- //
- //  var biciclettaLeggera = biciclette[0];
- //
- //  // Ricerca sull array
- //  for(var i = 1; i < biciclette.length; i++){
- //      // comparazione sull array
- //      if(biciclette[i].peso < biciclettaLeggera.peso ){
- //        biciclettaLeggera = biciclette[i];
- //      }
- //  };
- //
- //
- //  // console.log(biciclettaLeggera);
- //
- //
- //  // Print the result //
- //
- //  var data = {
- //      nome: biciclettaLeggera.nome,
- //      peso: biciclettaLeggera.peso
- //  }
- //
- //
- //  var html = template(data);
- //
- //  $(".container").append(html);
+   let bicicles = [
+      {nome: 'bolt', peso: 25, colore: 'rosso'},
+      {nome: 'mountainview', peso: 45, colore: 'nero'},
+      {nome: 'feather', peso: 15, colore: 'giallo'}
+  ];
 
- // secondo esercizio //
+  // var peso = 0;
+  // let biciLeggera = [];
+  let ligthCycle = null;
+  bicicles.forEach(element => {
+      if (ligthCycle == null || ligthCycle.peso > element.peso)  {
+          ligthCycle = element;
+      }
+  });
 
-
-//  var myarray = ["Michele", "Fabio", "Roberto", "Giovanni", "Simone", "Chiara"];
-//  var tot = myarray.length - 1;
-//  var min = parseInt(prompt("indici di inizio tra 0 e " + tot) );
-//  var max = parseInt(prompt("indice di fine (superiore a indici di inizio), tra 0 e " + tot) );
-//
-//
-// var newarray = [];
-//
-// for(var i = 0; i < myarray.length; i++){
-//    if(min <= 1 && max >= i){
-//      newarray.push(myarray[i]);
-//    }
-// };
-//
-// console.log("original: " + myarray);
-// console.log("indexes: " + min, max);
-// console.log("New: " + newarray);
-
-
-// terzo eserciio //
-
-var myarray = [
-    {name: "Francesco", type:"tshirt", color:"red"},
-    {name: "Dario", type: "scooter", color: "blue"},
-    {name: "CrissCross", type: "scarpe", color: "yellow"},
-    {name: "Jenny", type: "borsa", color:"white"},
-]
-
-var newarray = [];
-
-
-for(var i = 0; i < myarray.length; i++ ){
-    var copyobjt = {
-      name: myarray[i].name,
-      type: myarray[i].type,
-      color: myarray[i].color,
-      position: generatePosition(),
-    }
-
-    newarray.push(copyobjt);
-};
-
-console.table(myarray);
-console.table(newarray);
-
-
-function generatePosition(){
-  var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-  var letter = letters[Math.floor(Math.random() * (letters.length - 1) + 1)];
-
-  return letter;
-}
+  const {nome,peso} = ligthCycle;
+      $('.content').html(
+          `<div>
+              <h3> Nome della bici più leggera: ${nome}</h3>
+              <h4> Peso della bici più leggera: ${peso}</h4>
+          </div>
+          `
+      );
 
 
 
