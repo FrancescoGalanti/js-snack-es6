@@ -33,6 +33,27 @@
       );
 
 
+      const names = ['Franco', 'Luigi', 'Filippo', 'Alessandro', 'Adele', 'Alessia'];
+      const arrayVal = names.length - 1;
+      const min = parseInt( prompt('Inserisci un valore da 1 a ' + arrayVal) );
+      while (isNaN(min) || min < 1 || min > arrayVal) {
+        min = parseInt( prompt('Inserisci un valore da 1 a ' + arrayVal) );
+      }
+      const max = parseInt( prompt('Inserisci un valore da 1 a ' + arrayVal) );
+      while (isNaN(max) || max < min || max > arrayVal) {
+        max = parseInt( prompt('Inserisci un valore da 1 a ' + arrayVal) );
+      }
+      let newNames = [];
+      newNames = names.filter( (element, index) => {
+          if (index >= min && index <= max) {
+              return element
+        }
+      });
+    alert('I nomi selezionati nel range tra ' + min + ' e ' + max + ' sono:\n' + newNames);
+
+
+
+
 
 
 
