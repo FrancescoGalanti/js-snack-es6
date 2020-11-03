@@ -51,6 +51,50 @@
       });
     alert('I nomi selezionati nel range tra ' + min + ' e ' + max + ' sono:\n' + newNames);
 
+    // terzo esercizio //
+
+    const condominio = [
+    {famiglia: 'Rossi', componenti: 4},
+    {famiglia: 'Verdi', componenti: 2},
+    {famiglia: 'Bianchi', componenti: 4},
+    {famiglia: 'Gialli', componenti: 8}
+  ]
+  let condscala = [];
+
+  condscala = condominio.map( (element) => {
+    return {
+        ...element, // QUI USO LO SPREAD
+        scala: generateScala()
+        }
+});
+
+
+//   for (var i = 0; i < condominio.length; i++) {
+//     var scala = {
+//       famiglia: condominio[i].famiglia,
+//       componenti: condominio[i].componenti,
+//       scala: generateScala()
+//     }
+//     condscala.push(scala);
+//   }
+
+  console.table(condominio);
+  console.table(condscala);
+
+  //Function Scala
+
+  function generateScala() {
+    let scale = 'abc';
+    let scala = scale[randScala(0, scale.length - 1)];
+
+    return scala;
+  }
+
+  function randScala(min,max) {
+    return Math.floor (Math.random() * max - min + 1 ) + min;
+  }
+
+
 
 
 
