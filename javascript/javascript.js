@@ -60,7 +60,10 @@
     {name: "Dario", type: "scooter", color: "blue"},
     {name: "CrissCross", type: "scarpe", color: "yellow"},
     {name: "Jenny", type: "borsa", color:"white"},
-]
+
+];
+
+console.log(myarray);
 
 const newarray = myarray.map(element => {
     return {
